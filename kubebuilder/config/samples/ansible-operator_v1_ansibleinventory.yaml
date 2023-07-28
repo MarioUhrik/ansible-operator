@@ -1,0 +1,12 @@
+apiVersion: ansible-operator.ansible-operator.io/v1
+kind: AnsibleInventory
+metadata:
+  labels:
+    app.kubernetes.io/name: ansibleinventory
+    app.kubernetes.io/instance: ansibleinventory-sample
+    app.kubernetes.io/part-of: kubebuilder
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubebuilder
+  name: ansibleinventory-sample
+spec:
+  # TODO(user): Add fields here

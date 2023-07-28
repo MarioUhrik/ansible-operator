@@ -1,0 +1,31 @@
+# permissions for end users to edit ansibleinventories.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: ansibleinventory-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: kubebuilder
+    app.kubernetes.io/part-of: kubebuilder
+    app.kubernetes.io/managed-by: kustomize
+  name: ansibleinventory-editor-role
+rules:
+- apiGroups:
+  - ansible-operator.ansible-operator.io
+  resources:
+  - ansibleinventories
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ansible-operator.ansible-operator.io
+  resources:
+  - ansibleinventories/status
+  verbs:
+  - get

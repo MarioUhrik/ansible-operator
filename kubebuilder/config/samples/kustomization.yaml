@@ -1,0 +1,6 @@
+## Append samples of your project ##
+resources:
+- ansible-operator_v1_ansiblerole.yaml
+- ansible-operator_v1_ansibleinventory.yaml
+- ansible-operator_v1_ansiblejob.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

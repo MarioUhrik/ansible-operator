@@ -1,0 +1,27 @@
+# permissions for end users to view ansibleroles.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: ansiblerole-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: kubebuilder
+    app.kubernetes.io/part-of: kubebuilder
+    app.kubernetes.io/managed-by: kustomize
+  name: ansiblerole-viewer-role
+rules:
+- apiGroups:
+  - ansible-operator.ansible-operator.io
+  resources:
+  - ansibleroles
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ansible-operator.ansible-operator.io
+  resources:
+  - ansibleroles/status
+  verbs:
+  - get
