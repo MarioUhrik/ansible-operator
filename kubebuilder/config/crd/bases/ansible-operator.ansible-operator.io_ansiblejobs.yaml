@@ -36,8 +36,8 @@ spec:
             properties:
               cronSchedule:
                 description: Cron expression that determines how often this job runs.
-                  E.g. "0 1 * * *" to run every day at 01:00. If left empty, the job
-                  doesn't run periodically.
+                  E.g. "0 1 * * *" to run every day at 01:00. See see https://en.wikipedia.org/wiki/Cron
+                  If left empty, the job doesn't run periodically.
                 type: string
               runImmediately:
                 description: When set to true, the job is ran as soon as it's first

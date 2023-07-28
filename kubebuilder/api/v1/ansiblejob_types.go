@@ -32,23 +32,31 @@ type AnsibleJobSpec struct {
 	// Note that this may happen multiple times over the job's lifetime, e.g. if the controller restarts for any reason.
 	// If set to false, the execution of the job is only governed by cronSchedule.
 	// Defaults to true.
+	// +optional
 	RunImmediately bool `json:"runImmediately,omitempty"`
 	// Cron expression that determines how often this job runs. E.g. "0 1 * * *" to run every day at 01:00.
+	// See see https://en.wikipedia.org/wiki/Cron
 	// If left empty, the job doesn't run periodically.
+	// +optional
 	CronSchedule string `json:"cronSchedule,omitempty"`
 }
 
 // AnsibleJobStatus defines the observed state of AnsibleJob
 type AnsibleJobStatus struct {
 	// Timestamp of the last time this job was triggered by the controller
+	// +optional
 	LastStart string `json:"lastStart,omitempty"`
 	// Timestamp of the last time this job finished successfully
+	// +optional
 	LastSuccess string `json:"lastSuccess,omitempty"`
 	// Timestamp of the last time this job had an unsuccessful run
+	// +optional
 	LastFailure string `json:"lastFailure,omitempty"`
 	// Exit status of the last execution of the job
+	// +optional
 	ExitStatus string `json:"exitStatus,omitempty"`
 	// Name of the Ansible runner pod that last ran the job
+	// +optional
 	PodName string `json:"podName,omitempty"`
 }
 
