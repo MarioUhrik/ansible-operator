@@ -4,4 +4,4 @@
 
 #### Architecture Diagram
 
-![Architecture diagram](https://github.com/MarioUhrik/ansible-operator/blob/main/architecture/ansible-operator-architecture.png?raw=true)
+![Architecture diagram](https://github.com/MarioUhrik/ansible-operator/blob/main/docs/architecture/ansible-operator-architecture.png?raw=true)
