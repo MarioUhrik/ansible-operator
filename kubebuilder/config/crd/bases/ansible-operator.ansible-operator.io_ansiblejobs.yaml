@@ -49,6 +49,24 @@ spec:
             type: object
           status:
             description: AnsibleJobStatus defines the observed state of AnsibleJob
+            properties:
+              exitStatus:
+                description: Exit status of the last execution of the job
+                type: string
+              lastFailure:
+                description: Timestamp of the last time this job had an unsuccessful
+                  run
+                type: string
+              lastStart:
+                description: Timestamp of the last time this job was triggered by
+                  the controller
+                type: string
+              lastSuccess:
+                description: Timestamp of the last time this job finished successfully
+                type: string
+              podName:
+                description: Name of the Ansible runner pod that last ran the job
+                type: string
             type: object
         type: object
     served: true

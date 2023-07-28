@@ -40,8 +40,16 @@ type AnsibleJobSpec struct {
 
 // AnsibleJobStatus defines the observed state of AnsibleJob
 type AnsibleJobStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Timestamp of the last time this job was triggered by the controller
+	LastStart string `json:"lastStart,omitempty"`
+	// Timestamp of the last time this job finished successfully
+	LastSuccess string `json:"lastSuccess,omitempty"`
+	// Timestamp of the last time this job had an unsuccessful run
+	LastFailure string `json:"lastFailure,omitempty"`
+	// Exit status of the last execution of the job
+	ExitStatus string `json:"exitStatus,omitempty"`
+	// Name of the Ansible runner pod that last ran the job
+	PodName string `json:"podName,omitempty"`
 }
 
 //+kubebuilder:object:root=true
