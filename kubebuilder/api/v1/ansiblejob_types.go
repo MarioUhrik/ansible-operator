@@ -28,8 +28,14 @@ type AnsibleJobSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Cron expression that determines how often this job runs. E.g. "0 1 * * *" to run every day at 01:00. If left empty,
-	CronSchedule string `json:"cron,omitempty"`
+	// When set to true, the job is ran as soon as it's first noticed by the controller.
+	// Note that this may happen multiple times over the job's lifetime, e.g. if the controller restarts for any reason.
+	// If set to false, the execution of the job is only governed by cronSchedule.
+	// Defaults to true.
+	RunImmediately bool `json:"runImmediately,omitempty"`
+	// Cron expression that determines how often this job runs. E.g. "0 1 * * *" to run every day at 01:00.
+	// If left empty, the job doesn't run periodically.
+	CronSchedule string `json:"cronSchedule,omitempty"`
 }
 
 // AnsibleJobStatus defines the observed state of AnsibleJob
